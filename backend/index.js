@@ -14,7 +14,7 @@ const db = mysql.createConnection({
 app.use(cors());
 
 app.get("/", (req, res)=>{
-    const q = "SELECT * FROM presidents";
+    const q = "SELECT * FROM presidents ORDER BY ranking ASC";
     db.query(q, (err, data)=>{
         if(err) return res.json(err);
         return res.json(data)
