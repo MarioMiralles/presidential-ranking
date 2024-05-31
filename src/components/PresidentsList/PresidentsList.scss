@@ -1,0 +1,71 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.presidents {
+
+    &__list {
+        background-color: $background1;
+
+        &-container {
+            @include display (row, space-around, wrap);
+
+        }
+    }
+
+    &__pagination {
+        padding: 1rem;
+        text-align: end;
+
+        &-button {
+            padding: 0.75rem;
+            margin: 0 0.25rem;
+            background-color: $primary2;
+            border: none;
+            color: $secondary1;
+
+            &:hover {
+                cursor: pointer;
+                background-color: $primary1;
+                color: $primary2;
+            }
+
+            &--active {
+                background-color: $primary1;
+                color: $primary2;
+            }
+        }
+    }
+}
+
+.president {
+    width: 50%;
+    text-align: center;
+    padding: 1rem 0;
+    @include tablet {
+        width: 25%;
+
+        &:hover {
+            cursor: pointer;
+            background-color: $primary1;
+        }
+    }
+
+    &__image {
+        width: 8rem;
+        height: auto;
+
+        @include tablet {
+            width: 10rem;
+        }
+    }
+
+    &__name {
+        font-size: 0.875rem;
+        font-weight: 900;
+    }
+
+    &__ranking {
+        font-size: 0.825rem;
+        font-weight: 700;
+    }
+}

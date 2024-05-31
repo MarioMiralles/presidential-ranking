@@ -29,9 +29,17 @@ function App() {
     if (featuredPresidentId) {
       setFilteredPresidents(presidents.filter((president) => president.id !== featuredPresidentId));
     }
-  }, [presidents, featuredPresidentId])
+  }, [presidents, featuredPresidentId]);
 
   const featuredPresident = presidents.find((president) => president.id === featuredPresidentId);
+
+  const handlePageChange = (firstPresidentOnPageId) => {
+    setFeaturedPresidentId(firstPresidentOnPageId);
+  };
+
+  const handlePresidentClick = (presidentId) => {
+    setFeaturedPresidentId(presidentId);
+  };
 
   return (
     <>
@@ -41,7 +49,7 @@ function App() {
         {featuredPresident && (
           <FeaturedPresident president={featuredPresident} />
         )}
-        <PresidentsList presidents={filteredPresidents} />
+        <PresidentsList presidents={filteredPresidents} onPageChange={handlePageChange} onPresidentClick={handlePresidentClick} />
       </main>
     </>
   )

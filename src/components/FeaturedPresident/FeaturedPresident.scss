@@ -5,10 +5,12 @@
     padding: 1rem;
     background-color: $primary1;
 
-    &__good {
+    &__divider {
+        width: 10rem;
+        padding-top: 1rem;
 
-        &-policies {
-            
+        &-container {
+            @include display (row, center, nowrap);
         }
     }
 
@@ -24,6 +26,7 @@
 
     &__image {
         width: 100%;
+        margin-bottom: 0.5rem;
     }
 
     &__name {
@@ -33,11 +36,10 @@
 
     &__party {
         font-size: 0.875rem;
-        padding-right: 0.5rem;
+        padding: 0.25rem 0.5rem 0 0;
     }
 
     &__policies {
-        padding: 0.5rem 0;
 
         &-header {
             font-size: 1.25rem;
@@ -67,5 +69,6 @@
         padding-top: 0.5rem;
         text-align: end;
         border-top: 1px solid $primary2;
+        margin-top: 0.75rem;
     }
 }
