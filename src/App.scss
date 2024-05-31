@@ -1,7 +1,30 @@
+@use './styles/partials/variables' as *;
+@use './styles/partials/typography' as *;
+@use './styles/partials/mixins' as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: $background1;
+    color: $primary2;
+    font-family: 'Roboto', sans-serif;
+    @include typography-mobile;
+}
+
 .president {
 
     &__image {
         width: 10rem;
         height: auto;
+    }
+}
+
+.presidents {
+    &__title {
+        @include typography-mobile;
+        &--secondary {
+            color: $primary1;
+        }
     }
 }

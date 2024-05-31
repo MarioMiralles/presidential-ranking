@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import './App.scss'
+import Header from "./components/Header/Header";
 
 function App() {
   const [presidents, setPresidents] = useState([]);
@@ -19,7 +20,8 @@ function App() {
 
   return (
     <>
-      <h1>U.S. Presidential Rankings</h1>
+      <Header />
+      <h1 className="presidents__title">U.S. Presidential <span className="presidents__title--secondary">Freedom</span> Rankings</h1>
       <section className="presidents">
         {presidents.map((president) => (
           <article className="president" key={president.id}>
@@ -32,7 +34,7 @@ function App() {
             <p className="president__bad-score">Negative Score: {president.bad_score}</p>
             <p className="president__total-score">Total Score: {president.total_score}</p>
             <p className="president__ranking">Rank: #{president.ranking}</p>
-          </article>
+          </article> 
         ))}
       </section>
     </>
