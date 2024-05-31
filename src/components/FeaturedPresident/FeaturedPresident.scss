@@ -5,9 +5,27 @@
     padding: 1rem;
     background-color: $primary1;
 
+    @include tablet {
+        padding: 1rem 2rem;
+    }
+
+    &__container {
+
+        @include tablet {
+            width: 50%;
+            padding: 1rem;
+            @include display (column, center, nowrap);
+        }
+    }
+
     &__divider {
         width: 10rem;
         padding-top: 1rem;
+
+        @include tablet {
+            width: 70%;
+            padding: 1.25rem 0 0;
+        }
 
         &-container {
             @include display (row, center, nowrap);
@@ -27,11 +45,6 @@
     &__image {
         width: 100%;
         margin-bottom: 0.5rem;
-    }
-
-    &__name {
-        font-size: 1.5rem;
-        font-weight: 600;
     }
 
     &__party {
@@ -70,5 +83,17 @@
         text-align: end;
         border-top: 1px solid $primary2;
         margin-top: 0.75rem;
+
+        @include tablet {
+            font-size: 1.75rem;
+            padding: 1rem;
+        }
+    }
+
+    &__wrapper {
+        @include tablet {
+            @include display (row, space-between, nowrap);
+
+        }
     }
 }

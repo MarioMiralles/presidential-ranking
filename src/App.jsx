@@ -45,7 +45,7 @@ function App() {
     <>
       <Header />
       <main className="presidents">
-        <h1 className="presidents__title">U.S. Presidential <br></br><span className="presidents__title--secondary">Freedom</span> Rankings</h1>
+        <h1 className="presidents__title">U.S. Presidential <span className="presidents__title--secondary">Freedom</span> Rankings</h1>
         {featuredPresident && (
           <FeaturedPresident president={featuredPresident} />
         )}

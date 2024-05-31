@@ -9,6 +9,10 @@
     color: $primary2;
     font-family: Roboto, sans-serif;
     @include typography-mobile;
+
+    @include tablet {
+        @include typography-tab-desktop;
+    }
 }
 
 .presidents {
@@ -18,7 +22,11 @@
         font-weight: 900;
         text-align: center;
         background-color: $background1;
-        
+
+        @include tablet {
+            padding: 4rem;
+        }
+
         &--secondary {
             color: $primary1;
         }
