@@ -1,5 +1,15 @@
 @use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
 
 .header {
     background-color: $secondary1;
+    padding: 1.5rem 1.5rem 1.25rem;
+    @include display (row, center, nowrap);
+    @include tablet {
+        justify-content: flex-start;
+    }
+
+    &__logo {
+        width: 16rem;
+    }
 }
