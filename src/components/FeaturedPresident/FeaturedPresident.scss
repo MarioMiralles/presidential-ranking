@@ -4,17 +4,27 @@
 .featured {
     padding: 1rem;
     background-color: $primary1;
+    margin: auto;
 
     @include tablet {
         padding: 1rem 2rem;
+        max-width: 80rem;
     }
 
     &__container {
 
         @include tablet {
-            width: 50%;
             padding: 1rem;
             @include display (column, center, nowrap);
+
+            &--left {
+                width: 55%;
+            }
+
+            &--right {
+                padding-left: 2rem;
+                width: 100%;
+            }
         }
     }
 

@@ -16,6 +16,13 @@
 }
 
 .presidents {
+    background-color: $background1;
+    margin: auto;
+
+    @include tablet {
+        max-width: 80rem;
+        padding-bottom: 6rem;
+    }
 
     &__title {
         padding: 2.5rem 0.5rem;
@@ -31,4 +38,8 @@
             color: $primary1;
         }
     }
+}
+
+#root {
+    background-color: $background1;
 }

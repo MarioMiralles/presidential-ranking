@@ -33,10 +33,6 @@ function App() {
 
   const featuredPresident = presidents.find((president) => president.id === featuredPresidentId);
 
-  const handlePageChange = (firstPresidentOnPageId) => {
-    setFeaturedPresidentId(firstPresidentOnPageId);
-  };
-
   const handlePresidentClick = (presidentId) => {
     setFeaturedPresidentId(presidentId);
   };
@@ -49,7 +45,7 @@ function App() {
         {featuredPresident && (
           <FeaturedPresident president={featuredPresident} />
         )}
-        <PresidentsList presidents={filteredPresidents} onPageChange={handlePageChange} onPresidentClick={handlePresidentClick} />
+        <PresidentsList presidents={filteredPresidents} onPresidentClick={handlePresidentClick} />
       </main>
     </>
   )
