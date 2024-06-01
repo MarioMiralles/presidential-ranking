@@ -4,6 +4,7 @@ import './App.scss'
 import Header from "./components/Header/Header";
 import FeaturedPresident from "./components/FeaturedPresident/FeaturedPresident";
 import PresidentsList from "./components/PresidentsList/PresidentsList";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [presidents, setPresidents] = useState([]);
@@ -33,10 +34,6 @@ function App() {
 
   const featuredPresident = presidents.find((president) => president.id === featuredPresidentId);
 
-  const handlePageChange = (firstPresidentOnPageId) => {
-    setFeaturedPresidentId(firstPresidentOnPageId);
-  };
-
   const handlePresidentClick = (presidentId) => {
     setFeaturedPresidentId(presidentId);
   };
@@ -49,8 +46,9 @@ function App() {
         {featuredPresident && (
           <FeaturedPresident president={featuredPresident} />
         )}
-        <PresidentsList presidents={filteredPresidents} onPageChange={handlePageChange} onPresidentClick={handlePresidentClick} />
+        <PresidentsList presidents={filteredPresidents} onPresidentClick={handlePresidentClick} />
       </main>
+      <Footer />
     </>
   )
 }

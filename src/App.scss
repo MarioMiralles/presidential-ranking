@@ -16,6 +16,17 @@
 }
 
 .presidents {
+    background-color: $background1;
+    margin: auto;
+
+    @include tablet {
+        max-width: 80rem;
+        padding-bottom: 6rem;
+    }
+
+    @include desktop {
+        padding: 0 5rem;
+    }
 
     &__title {
         padding: 2.5rem 0.5rem;
@@ -29,6 +40,11 @@
 
         &--secondary {
             color: $primary1;
+            text-shadow: 1px 1px 1px $primary2;
         }
     }
+}
+
+#root {
+    background-color: $background1;
 }

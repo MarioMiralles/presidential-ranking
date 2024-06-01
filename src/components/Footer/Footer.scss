@@ -1,0 +1,252 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.footer {
+    background-color: $primary2;
+    @include display (column, center, nowrap);
+    align-items: center;
+    padding: 2.5rem 1rem;
+
+    @include tablet {
+        padding: 2.5rem;
+    }
+
+    @include desktop {
+        padding: 2.5rem 5rem;
+    }
+
+    &__attribution {
+        width: 100%;
+        padding: 2.5rem 1rem;
+        max-width: 20rem;
+
+        @include tablet {
+            max-width: none;
+            padding: 1.5rem;
+        }
+
+        @include desktop {
+            width: 50%;
+            border-left: 1px solid rgba(255, 255, 255, 0.308);
+        }
+
+        &-disclaimer {
+            text-align: center;
+            padding: 1rem;
+            margin-top: 1rem;
+            color: $secondary1;
+            border-top: 1px solid rgba(255, 255, 255, 0.308);
+
+            @include tablet {
+                width: 100%;
+                padding: 1.5rem 0 0 0;
+                font-size: 1rem;
+            }
+
+            @include desktop {
+                margin-top: 4rem;
+            }
+        }
+
+        &-header {
+            color: $secondary1;
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            font-weight: 500;
+            padding-bottom: 0.8125rem;
+
+            @include tablet {
+                padding-bottom: 0.25rem;
+            }
+        }
+
+        &-text {
+            color: $secondary2;
+            text-transform: uppercase;
+            text-decoration: none;
+
+            @include tablet {
+                font-size: 0.875rem;
+            }
+        }
+    }
+
+    &__button {
+        width: 50%;
+        padding: 0.5rem 1rem;
+        border-radius: none;
+        background-color: $primary1;
+        border: 3px solid $primary1;
+        text-transform: uppercase;
+        color: $primary2;
+        font-size: 1.125rem;
+        font-weight: 700;
+        text-decoration: none;
+        text-align: center;
+
+        &:hover {
+            color: $secondary1;
+        }
+
+        &--contact {
+            background-color: $primary2;
+            color: $primary1;
+
+            &:hover {
+                background-color: $primary1;
+                color: $secondary1;
+            }
+        }
+    }
+
+    &__buttons {
+        width: 100%;
+        @include display (row, center, nowrap);
+        gap: 0.5rem;
+    }
+
+    &__container {
+        @include tablet {
+            @include display (column, center, nowrap);
+            gap: 3rem;
+            width: 100%;
+
+            &--right {
+                @include display (row, center, wrap);
+                gap: 1rem;
+
+                @include desktop {
+                    @include display (row, flex-start, nowrap);
+                    gap: 1.5rem;
+                }
+
+                &-top {
+                    @include display (row, center, nowrap);
+                }
+            }
+        }
+
+        @include desktop {
+            @include display (row, center, nowrap);
+            gap: 3rem;
+        }
+    }
+
+    &__developer {
+        border-top: 1px solid rgba(255, 255, 255, 0.308);
+        padding: 2.5rem 0 ;
+        max-width: 20rem;
+
+        @include tablet {
+            max-width: 50rem;
+            border-top: none;
+            padding: 0 1rem;
+        }
+
+        @include desktop {
+           padding: 0;
+        }
+
+        &-logo {
+            width: 100%;
+            padding-bottom: 0.75rem;
+
+            @include tablet {
+                max-width: 21rem;
+            }
+        }
+
+        &-info {
+
+            @include tablet {
+                padding-left: 0.5rem;
+            }
+
+            &-icon {
+                width: 2rem;
+            }
+
+            &-text {
+                color: $secondary1;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            &-wrapper {
+                @include display (row, center, nowrap);
+                gap: 0.75rem;
+                padding: 0.75rem;
+            }
+        }
+    }
+
+    &__logo {
+        max-width: 15rem;
+        margin-bottom: 2.5rem;
+    }
+
+    &__tools {
+        padding: 1.5rem 1rem;
+        max-width: 20rem;
+
+        @include tablet {
+            max-width: none;
+            min-width: 24rem;
+            width: 100%;
+            padding: 1rem 2rem 0;
+            border-left: 1px solid rgba(255, 255, 255, 0.308);
+        }
+
+        @include desktop {
+            display: none;
+        }
+
+        &--desktop {
+            display: none;
+
+            @include desktop {
+                @include display (column, flex-start, nowrap);
+                padding-top: 1.5rem;
+            }
+        }
+
+        &-header {
+            color: $secondary1;
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            font-weight: 500;
+            padding-bottom: 0.8125rem;
+
+            @include tablet {
+                text-align: end;
+                padding-right: 2rem;
+            }
+        }
+
+        &-icon {
+            width: 4.5rem;
+            padding: 0.5rem;
+        }
+
+        &-icons {
+            @include display (row, space-around, wrap);
+        }
+    }
+
+    &__wrapper {
+        @include display (column, center, nowrap);
+        align-items: center;
+        margin-bottom: 3.75rem;
+
+        @include tablet {
+            max-width: 20rem;
+            margin: auto;
+        }
+    }
+}

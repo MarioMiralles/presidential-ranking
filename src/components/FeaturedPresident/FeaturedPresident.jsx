@@ -6,7 +6,7 @@ function FeaturedPresident({ president }) {
     return (
         <article className="featured">
             <div className="featured__wrapper">
-                <div className="featured__container">
+                <div className="featured__container featured__container--left">
                     <section className="featured__heading">
                         <div className="featured__ranking">
                             <h2 className="featured__ranking-number">#{president.ranking}</h2>
@@ -18,7 +18,7 @@ function FeaturedPresident({ president }) {
                     </section>
                     <img className="featured__image" src={president.img} alt={president.name} />
                 </div>
-                <div className="featured__container">
+                <div className="featured__container featured__container--right">
                     <div className="featured__policies">
                         <h5 className="featured__policies-header">+{president.good_score}</h5>
                         <p className="featured__policies-description">{president.good_policies}</p>

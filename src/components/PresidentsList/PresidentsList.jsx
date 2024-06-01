@@ -1,19 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import './PresidentsList.scss';
 
 const cardsPerPage = 4;
 
-function PresidentsList({ presidents, onPageChange, onPresidentClick }) {
+function PresidentsList({ presidents, onPresidentClick }) {
     const [currentPage, setCurrentPage] = useState(1);
     const totalPages = Math.ceil(presidents.length / cardsPerPage);
     const startIndex = (currentPage - 1) * cardsPerPage;
     const currentPresidents = presidents.slice(startIndex, startIndex + cardsPerPage);
-
-    useEffect(() => {
-        if (currentPresidents.length > 0) {
-            onPageChange(currentPresidents[0].id);
-        }
-    }, [currentPage]);
 
     const handlePageChange = (pageNumber) => {
         setCurrentPage(pageNumber);

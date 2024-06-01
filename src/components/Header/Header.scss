@@ -7,6 +7,11 @@
     @include display (row, center, nowrap);
     @include tablet {
         justify-content: flex-start;
+        padding: 2.25rem;
+    }
+
+    @include desktop {
+        padding: 2.25rem 5rem;
     }
 
     &__logo {
