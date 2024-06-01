@@ -10,7 +10,7 @@ const db = mysql.createConnection({
     host: dbConfig.hostname,
     user: dbConfig.username,
     password: dbConfig.password,
-    database: dbConfig.pathname.substring(1),
+    database: 'presidential_ranking',
     port: dbConfig.port
 });
 
