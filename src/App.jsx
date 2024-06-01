@@ -4,6 +4,7 @@ import './App.scss'
 import Header from "./components/Header/Header";
 import FeaturedPresident from "./components/FeaturedPresident/FeaturedPresident";
 import PresidentsList from "./components/PresidentsList/PresidentsList";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [presidents, setPresidents] = useState([]);
@@ -47,6 +48,7 @@ function App() {
         )}
         <PresidentsList presidents={filteredPresidents} onPresidentClick={handlePresidentClick} />
       </main>
+      <Footer />
     </>
   )
 }

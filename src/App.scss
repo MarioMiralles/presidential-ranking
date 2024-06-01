@@ -24,6 +24,10 @@
         padding-bottom: 6rem;
     }
 
+    @include desktop {
+        padding: 0 5rem;
+    }
+
     &__title {
         padding: 2.5rem 0.5rem;
         font-weight: 900;
@@ -36,6 +40,7 @@
 
         &--secondary {
             color: $primary1;
+            text-shadow: 1px 1px 1px $primary2;
         }
     }
 }
