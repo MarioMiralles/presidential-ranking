@@ -14,7 +14,7 @@ function App() {
   useEffect(() => {
     const fetchAllPresidents = async () => {
       try {
-        const res = await axios.get("http://localhost:8800");
+        const res = await axios.get("https://presidential-rankings-07d7c502f54a.herokuapp.com/");
         setPresidents(res.data);
         if (res.data.length > 0) {
           setFeaturedPresidentId(res.data[0].id);
