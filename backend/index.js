@@ -3,7 +3,7 @@ import mysql from 'mysql';
 import cors from 'cors';
 
 const app = express();
-const PORT = 8800;
+const PORT = process.env.PORT || 8800;
 const db = mysql.createConnection({
     host: "localhost",
     user: "root",
@@ -21,6 +21,6 @@ app.get("/", (req, res)=>{
     })
 })
 
-app.listen(PORT, ()=>{
-    console.log(`Backend server is running on port ${PORT}`)
-})
+app.listen(PORT, () => {
+    console.log(`Backend server is running on port ${PORT}`);
+});
