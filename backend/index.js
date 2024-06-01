@@ -14,6 +14,14 @@ const db = mysql.createConnection({
     port: dbConfig.port
 });
 
+db.connect((err) => {
+    if (err) {
+        console.error('Error connecting to database:', err);
+        return;
+    }
+    console.log('Connected to MySQL database');
+});
+
 app.use(cors());
 
 app.get("/", (req, res) => {
