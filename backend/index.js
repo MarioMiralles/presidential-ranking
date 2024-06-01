@@ -4,12 +4,15 @@ import cors from 'cors';
 
 const app = express();
 const PORT = process.env.PORT || 8800;
+const dbUrl = process.env.CLEARDB_DATABASE_URL;
+const dbConfig = new URL(dbUrl);
 const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "rootroot",
-    database: "presidential_ranking"
-})
+    host: dbConfig.hostname,
+    user: dbConfig.username,
+    password: dbConfig.password,
+    database: dbConfig.pathname,
+    port: dbConfig.port
+});
 
 app.use(cors());
 
