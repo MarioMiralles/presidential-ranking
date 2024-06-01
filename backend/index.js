@@ -10,16 +10,16 @@ const db = mysql.createConnection({
     host: dbConfig.hostname,
     user: dbConfig.username,
     password: dbConfig.password,
-    database: dbConfig.pathname,
+    database: dbConfig.pathname.substring(1),
     port: dbConfig.port
 });
 
 app.use(cors());
 
-app.get("/", (req, res)=>{
+app.get("/", (req, res) => {
     const q = "SELECT * FROM presidents ORDER BY ranking ASC";
-    db.query(q, (err, data)=>{
-        if(err) return res.json(err);
+    db.query(q, (err, data) => {
+        if (err) return res.json(err);
         return res.json(data)
     })
 })
