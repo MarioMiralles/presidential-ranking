@@ -10,7 +10,7 @@ const db = mysql.createConnection({
     host: dbConfig.hostname,
     user: dbConfig.username,
     password: dbConfig.password,
-    database: 'presidential_ranking',
+    database: dbConfig.pathname.substring(1),
     port: dbConfig.port
 });
 
@@ -25,7 +25,7 @@ db.connect((err) => {
 app.use(cors());
 
 app.get("/", (req, res) => {
-    const q = "SELECT * FROM heroku_14550a663cb99ae.presidents ORDER BY ranking ASC";
+    const q = "SELECT * FROM presidents ORDER BY ranking ASC";
     db.query(q, (err, data) => {
         if (err) return res.json(err);
         return res.json(data)
