@@ -4,14 +4,12 @@ import cors from 'cors';
 
 const app = express();
 const PORT = process.env.PORT || 8800;
-const dbUrl = process.env.CLEARDB_DATABASE_URL;
-const dbConfig = new URL(dbUrl);
 const db = mysql.createConnection({
-    host: dbConfig.hostname,
-    user: dbConfig.username,
-    password: dbConfig.password,
-    database: dbConfig.pathname.substring(1),
-    port: dbConfig.port
+    host: "alv4v3hlsipxnujn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    user: "gkyro5bc6p5i7os4",
+    password: "e2uwmnm5c38ldtxp",
+    database: "e9tj661pt0vuvjr0",
+    port: 3306
 });
 
 db.connect((err) => {
