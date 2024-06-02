@@ -8,7 +8,7 @@ const db = mysql.createConnection({
     host: "alv4v3hlsipxnujn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     user: "gkyro5bc6p5i7os4",
     password: "e2uwmnm5c38ldtxp",
-    database: "presidential_ranking",
+    database: "e9tj661pt0vuvjr0",
     port: 3306
 });
 
